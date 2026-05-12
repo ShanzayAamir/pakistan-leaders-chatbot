@@ -21,7 +21,7 @@ jobs:
           git config --global user.email "you@example.com"
           git config --global user.name "github-actions"
 
-          git clone https://USER_NAME:$HF_TOKEN@huggingface.co/spaces/ShanzaGull/pakistan-leaders-chatbot space
+          git clone https://ShanzaGull:$HF_TOKEN@huggingface.co/spaces/ShanzaGull/pakistan-leaders-chatbot space
 
           rsync -av --exclude='.git' ./ space/
 
