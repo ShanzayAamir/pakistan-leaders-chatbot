@@ -1,0 +1,31 @@
+name: Deploy to Hugging Face Spaces
+
+on:
+  push:
+    branches:
+      - Main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Push to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "github-actions"
+
+          git clone https://ShanzaGull:$HF_TOKEN@huggingface.co/spaces/ShanzaGull/pakistan-leaders-chatbot space
+
+          rsync -av --exclude='.git' ./ space/
+
+          cd space
+          git add .
+          git commit -m "Deploy from GitHub Actions" || echo "No changes to commit"
+          git push
