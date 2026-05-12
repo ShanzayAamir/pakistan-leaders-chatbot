@@ -11,7 +11,7 @@ pinned: false
 
 # 🇵🇰 Pakistan Political Leaders AI
 
-An interactive chat demo powered by a **fine-tuned TinyLlama** model trained on Wikipedia data about Pakistani political leaders.
+An interactive chat demo powered by a **fine-tuned TinyLlama** model trained on Wikipedia data about Pakistani political leaders...
 
 ## 🧠 Model Details
 
